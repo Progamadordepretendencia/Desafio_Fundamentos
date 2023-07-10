@@ -49,15 +49,6 @@ void main() {
       dentista.add(nome);
       default:
     }
-    /*if (ocupacao == 'desenvolvedor') {
-      desenvolvedor.add(nome);
-    }else if (ocupacao == 'estudante'){
-      estudante.add(nome);
-    }else if (ocupacao == 'jornalista'){
-      jornalista.add(nome);
-    }else if (ocupacao == 'dentista'){
-      dentista.add(nome);
-    }*/
   }
   print('Desenvolvedores: ');
   desenvolvedor.forEach(print);

@@ -31,16 +31,33 @@ void main() {
   final jornalista = []; 
 
   for (var profissao in pacientes) {
-    final nome = profissao[0];
-    if (profissao.split('|')[2].toLowerCase() == 'desenvolvedor') {
+    final pacienteData = profissao.split('|');
+    final nome = pacienteData[0];
+    final ocupacao = pacienteData[2].toLowerCase();
+
+    switch(ocupacao){
+      case 'desenvolvedor':
       desenvolvedor.add(nome);
-    }else if (profissao.split('|')[2].toLowerCase() == 'estudante'){
+      break;
+      case 'estudante':
       estudante.add(nome);
-    }else if (profissao.split('|')[2].toLowerCase() == 'jornalista'){
+      break;
+      case 'jornalista':
       jornalista.add(nome);
-    }else if (profissao.split('|')[2].toLowerCase() == 'dentista'){
+      break;
+      case 'dentista':
       dentista.add(nome);
+      default:
     }
+    /*if (ocupacao == 'desenvolvedor') {
+      desenvolvedor.add(nome);
+    }else if (ocupacao == 'estudante'){
+      estudante.add(nome);
+    }else if (ocupacao == 'jornalista'){
+      jornalista.add(nome);
+    }else if (ocupacao == 'dentista'){
+      dentista.add(nome);
+    }*/
   }
   print('Desenvolvedores: ');
   desenvolvedor.forEach(print);
@@ -49,6 +66,7 @@ void main() {
   print('jonarlista: ');
   jornalista.forEach(print);
   print('denstista: ');
+  dentista.forEach(print);
 
   print('Apresente a quantidade de pacientes que moram em SP');
 
@@ -64,3 +82,4 @@ void main() {
 
 print('O numero de pacientes que moram em Sao Paulo e: $sp');
 }
+
